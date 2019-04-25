@@ -19,3 +19,5 @@
     **强调** __强调__
     等同于 <strong>
 ```
+`到此结束， 好无聊...` 
+链接走起[markDown](https://github.com/younghz/Markdown)
