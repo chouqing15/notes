@@ -8,4 +8,4 @@
 
 然后... 开始md的笔记吧。 [markdowm](./markdown.md)
 
-[代码整洁之道](./javascript/neatCode)
+[代码整洁之道](./javascript/neatCode.md)
