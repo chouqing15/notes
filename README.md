@@ -9,3 +9,5 @@
 然后... 开始md的笔记吧。 [markdowm](./markdown.md)
 
 ## [代码整洁之道](./javascript/neatCode.md)
+
+## [查看全局npm安装包命令](./javascript/npm_global.md)
