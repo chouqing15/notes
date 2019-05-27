@@ -20,4 +20,6 @@
     等同于 <strong>
 ```
  
-链接走起[markDown](https://github.com/younghz/Markdown)[markDown_juanshu](https://www.jianshu.com/p/b03a8d7b1719)
+链接走起[markDown](https://github.com/younghz/Markdown)
+
+[markDown_juanshu](https://www.jianshu.com/p/b03a8d7b1719)
