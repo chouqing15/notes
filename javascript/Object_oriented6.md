@@ -36,3 +36,24 @@ Object.defineProperties(person,{
   }
 })
 ```
+## 读取属性的特性
+`Object.getOwnPropertyDescriptor(target,property)`
+```
+let descriptor = Object.getOwnPropertyDescriptor(person,'year');
+descriptor.configurable; //false
+descriptor.value; //1
+
+```
+## 工厂模式
+> 及创建多个相同对象的实现.
+```
+function createPerson(name,age){
+  let person = new Object();
+  person.name = name;
+  person.age = age;
+  return person;
+}
+```
+> 为了解决对象识别问题(对象的类型),构造函数出生了。
+## 构造函数
+
