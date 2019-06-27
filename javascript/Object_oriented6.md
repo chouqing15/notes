@@ -11,7 +11,7 @@ var obj = {};
 - [[Enumerable]] 表示是否可以通过for-in 循环返回属性
 - [[Writable]] 表示是否可以修改属性值
 - [[Value]] 包含属性的数据值， 默认undefined
-  - [[get | set]] 包含读取属性和写入属性的调用函数, 默认undefined
+  - [[get | set]] 包含读取属性和写入属性的调用函数, 默认undefined  
 修改属性的默认特性， 通过`Object.defineProperty(target, property, describe)`方法
 ```
 var person = {};
