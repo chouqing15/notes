@@ -83,3 +83,20 @@ person instanceof Person // true
 ```
 function[person].prototype -> {constructor:person}
 ```
+> 通过构造函数创建出来的实例, 该实例的内部包含一个指针`__proto__`。  
+
+**`__proto__`连接存在与实例与构造函数的原型对象之间, 和构造函数没有直接关系。**  
+
+这个属性无法直接访问,但是可以通过`isPrototypeOf`方法来确定对象之间是否存在这种关系。
+```
+Person.prototype.isPrototypeOf(person)   -> return boolean;
+```
+> 通过`getPrototypeOf(target)`方法来获取实例的原型对象;
+
+`Object.getPrototypeOf(person) -> prototype`  
+
+> 通过`hasOwnProperty(property)`,来检测属性是存在与实例中还是原型中。  
+
+`Object.hasOwnProperty('name') -> return boolean` `true`表示存在与实例,`false`表示存在与原型  
+
+#### 原型与in操作符
