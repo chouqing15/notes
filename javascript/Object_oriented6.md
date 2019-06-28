@@ -76,6 +76,10 @@ person instanceof Person // true
 
 ## 原型模式
 > 原型对象,及通过`prototype`指向的一个对象, `prototype`是函数的一个属性, 每个函数都会有一个`prototype`, `prototype`会被所以构造函数实例化的对象所共享.  
-> 所有原型对象`prototype`都会自动获得一个`constructor`属性, 指向`prototype`属性所在函数的指针.  
+
+> 所有原型对象`prototype`都会自动获得一个`constructor`属性, 指向`prototype`属性所在函数的指针. 
+
 构造函数拥有一个`prototype`属性, 指向一个原型对象, 没个函数都会拥有一个`prototype`, 每个`prototype`属性指向的对象又会拥有一个`constructor`属性, 指向构造函数
-```function[person].prototype -> {constructor:person}```
+```
+function[person].prototype -> {constructor:person}
+```
