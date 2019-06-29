@@ -61,7 +61,7 @@ function createPerson(name,age){
 - 没有显示的创建对象
 - 直接将属性和方法赋给了this对象
 - 没有return 语句
-    
+
 创建构造函数实例,必须要使用new操作符, new操作符经历了一下步骤:
 - 创建一个对象
 - 将构造函数赋给了新对象,this也就指向了新对象(就好比将新对象传入函数执行了一次,并且拥有了构造函数的所有属性和方法,同时也拥有了构造函数的原型,这里就解决了上面所说的对象识别问题)
@@ -101,3 +101,15 @@ Person.prototype.isPrototypeOf(person)   -> return boolean;
 `Object.hasOwnProperty('name') -> return boolean` `true`表示存在与实例,`false`表示存在与原型  
 
 #### 原型与in操作符
+>2种方式使用in操作符,for-in中使用, 单独使用in  
+
+>in会通过对象能够访问给定属性时返回true(原型或者实例)
+```
+'name' in person -> return boolean
+```
+> `hasPrototypeProperty()`方法表示是否是原型属性, 如果实例中存在与原型相同的属性, 则返回false。 此方法返回boolean值;
+
+>`for-in`返回所有可枚举属性(包含原型属性).`Object.key()`如果传入实例对象,则只返回实例属性(不包含原型);  
+
+> `Object.getOwnPropertyNames()`方法返回所有实例属性(包含不可枚举属性);
+

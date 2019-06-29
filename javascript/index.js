@@ -1,13 +1,8 @@
-function Person(name,age) {
-  this.name = name;
-  this.age = age;
+var fun = function (a,b,c) {
+  console.log(a,b,c)
 }
 
-Person.prototype.sayHello = function () {
-  return 'hello'
-}
-
-var person = new Person('xxx', 21);
-
-var proto = Object.getPrototypeOf(person);
-console.log(proto.sayHello())
+var fun1 = fun.bind(fun, 1);
+ fun1 = fun1.bind(fun, 2);
+ fun1 = fun1.bind(fun, 3);
+console.log(fun1());
