@@ -57,4 +57,82 @@ for (var i = 0, type; type = ['Array', 'String', 'Number'][i++];){
 
 console.log(Type.isArray([]));
 console.log(Type.isString('str'));
+------------------------------------------------
+var report = (function () {
+  var imgs = [];
+  return function (src) {
+    var img = new Image();
+    imgs.push(img);
+    img.src = src;
+  }
+})();
+report('http://xxx.com/xxx.jpg');
+// img对象经常用于数据上报, 如果不使用闭包, 数据会丢失, 因为局部变量会在函数执行完毕就销毁,此时可能请求还没有来的及发送.变量就已经销毁掉了.
+// 这里是因为有一个异步请求的存在
 ```
+#### 闭包和面向对象设计
+>面向对象的闭包
+```
+var extent = {
+  value:0,
+  call:function (){
+    this.value++;
+    return this.value;
+  }
+}
+```
+#### 用闭包实现命令模式
+```
+var Tv = {
+  open: function () {
+    console.log('open')
+  },
+  close: function () {
+    console.log('close');
+  }
+}
+
+var createCommand = function (receiver) {
+  var execute = function () {
+    receiver.open();
+  }
+  var undo = function () {
+    receiver.close();
+  }
+  return {
+    execute,
+    undo
+  }
+}
+
+var setCommand = function (command) {
+  document.getElementById('execute').onclick = function () {
+    command.execute();
+  }
+  document.getElementById('undo').onclick = function () {
+    command.undo();
+  }
+}
+
+setCommand(createCommand(Tv));
+
+```
+#### 闭包与内存管理
+> 闭包不会造成内存泄露,给变量放在闭包内和放在全局作用域,对内存的影响是一致的。  
+
+> 存在内存泄露的情况是dom中的循环引用才会造成内存泄露。
+循环引用示例:
+```
+function handle() {
+  var element = document.getElementById('test');
+  element.onclick = function () {
+    alert(element.id);
+  }
+}
+// element的onclick引用了函数funciton，function通过闭包引用了element，照成循环引用
+```
+#### 高阶函数
+> 满足下列条件之一及高阶函数:
+- 函数可以作为参数传递
+- 函数可以作为返回值输出   
+
