@@ -13,6 +13,48 @@
 `call(target,params) | apply(target,params)` 第一次参数表示函数内部this对象的指向,不需要改变传入null(null可以代替某个具体的对象)
 
 #### bind
-[图片上传失败...(./images/1561792013989.jpg)]
 <img src="./images/1561792013989.jpg" />
-> `bind`用来包装一个函数,改变其`this`指向,并返回一个新函数, 并且会记住你传入的参数,直到函数执行
+> `bind`用来包装一个函数,改变其`this`指向,返回一个新函数, 并且会记住你传入的参数,直到函数执行
+
+## 闭包和高阶函数
+#### 闭包
+> 闭包的形成主要取决于变量`作用域`和变量的`生存周期`  
+
+> 变量的作用域是之下从上查找。  
+
+> 生存周期取决于变量是全局变量还是局部变量, 全局变量的生存周期是永久性的,局部变量这是执行环境结束则(js垃圾回收机制会自动销毁变量)  
+
+闭包的应用:
+```
+var mult = (function () {
+  var cache = {};
+  return function () {
+    var args = Array.prototype.join.call(arguments, ',');
+    if (cache[args]) {
+      return cache[args];
+    }
+    var a = 1;
+    for (var i in arguments) {
+      a = a * arguments[i]
+    }
+    return cache[args] = a;
+    // 这里可以看到赋值的过程中,也会返回值,就好比,[].push(1);会返回一个数组的length一样。
+  }
+})();
+
+console.log(mult(1,2,3));
+console.log(mult(1, 2, 3));
+--------------------------------------------------------
+var Type = {};
+
+for (var i = 0, type; type = ['Array', 'String', 'Number'][i++];){
+  (function (type) {
+    return Type['is' + type] = function (obj) {
+      return Object.prototype.toString.call(obj) === '[object ' + type + ']';
+    }
+  })(type)
+}
+
+console.log(Type.isArray([]));
+console.log(Type.isString('str'));
+```
