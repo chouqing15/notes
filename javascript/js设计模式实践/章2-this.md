@@ -136,3 +136,35 @@ function handle() {
 - 函数可以作为参数传递
 - 函数可以作为返回值输出   
 
+#### 高阶函数实现AOP
+> AOP(面向切面编程), 主要作用是把一些核心业务逻辑和无关的功能抽离出来。在通过“动态织入”的方式掺入业务逻辑模块中。。  
+
+示例:
+```
+Function.prototype.before = function (beforeFn) {
+  var _this = this;
+  return function () {
+    beforeFn.apply(this, arguments);
+    _this.apply(this, arguments);
+  }
+}
+ 
+Function.prototype.after = function (afterFn) {
+  var _this = this;
+  return function () {
+    _this.apply(this, arguments);
+    afterFn.apply(this, arguments);
+  }
+}
+var fnc = function () {
+  console.log(2);
+}
+
+fnc = fnc.before(function () {
+  console.log(1)
+}).after(function () {
+  console.log(3);
+})
+
+fnc();
+```
