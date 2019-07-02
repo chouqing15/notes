@@ -168,3 +168,42 @@ fnc = fnc.before(function () {
 
 fnc();
 ```
+#### 高阶函数的其他应用:
+> `currying` 颗粒化(部份求值), 函数接收一些参数, 不会立即求值, 而是真正需要求值的时候,在把之前传入的参数一次求值
+```
+var curry = function (fn) {
+  var args = [];
+  return function () {
+    if (arguments.length === 0) {
+      return fn.apply(this, args);
+    } else {
+      [].push.apply(args, arguments);
+    }
+  }
+}
+
+var cost = function () {
+  var count = 0;
+  for (var i in arguments) {
+     count += arguments[i];
+  }
+  return count;
+};
+
+cost = curry(cost);
+
+cost(100)
+cost(100)
+console.log(cost())
+```
+#### uncurrying
+> uncurrying 实现方式:
+```
+Function.prototype.uncurrying = function (){
+  var _this = this;
+  return function (){
+    var obj = Array.prototype.shift.call(arguments);
+    return _this.apply(obj,arguments);
+  }
+}
+```
