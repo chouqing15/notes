@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>兑换记录</title>
+	<script src="./rem.js"></script>
+	<link rel="stylesheet" type="text/css" href="./reset.css">
+</head>
+
+<body>
+	<div style="height: .88rem;border-bottom: 1px solid  #E8E8E8;">
+		<div style="
+		font-family: PingFangSC-Regular;
+font-size: .24rem;float: left;
+color: #1C1C1C;
+letter-spacing: 0;line-height: .88rem;margin-left: .8rem">
+			订单号：23456789023546565324
+		</div>
+		<div style="font-family: PingFangSC-Regular;
+		font-size: .24rem;
+		float: right;
+		line-height: .88rem;margin-right: .32rem;
+		color: #E4AD55;">
+			未完成
+		</div>
+	</div>
+
+	<script>
+		new Promise((res,rej)=> rej('fail'))
+		.then(res =>{ console.log(res)})
+		.catch(e =>{
+			return {e,prom:new Promise((res,rej)=> rej('fail2'))}
+		})
+		.then(e =>{ console.log(e.e);return e.prom})
+		.then(res=>{console.log(res)})
+		.catch(e =>{
+			console.log(e)
+		})
+	</script>
+</body>
+
+</html>

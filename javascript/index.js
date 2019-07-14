@@ -1,39 +1,29 @@
-/**
- * 
- * 
- * onclick -> this.setState({visible:true}) -> update -> function (visible){
-    if(visible == true){
-      this.history.push('http://xxx.com/lib/123');
+var throttle = function (fn, interval) { 
+  var _self = fn,
+    timer,
+    firstTime = true;
+  return function () {
+    var _me = this;
+    var arg = arguments;
+
+    if (firstTime) {
+      fn.apply(_me, arg);
+      return firstTime = false;
     }
 
-    // params [dataSource,property:string[]] -> id
+    if (timer) {
+      return false;
+    }
 
-    dataSource -> property -> dataSource[property]
-    ['name','age','xxx'].every(item =>{
-      return dataSource[item];
-    })
-
-    return (
-      <div />
-    )
-  }
- */
-
-
-Function.prototype.uncurrying = function (){
-  var _this = this;
-  return function (){
-    var obj = Array.prototype.shift.call(arguments);
-    return _this.apply(obj,arguments);
+    timer = setInterval(function () {
+      console.log(timer, _me, _self);
+      clearInterval(timer);
+      timer = null;
+      fn.apply(_me, arg);
+    }, interval || 500)
   }
 }
 
-var push = Array.prototype.push.uncurrying();
-
-var arr = {
-  a: 1,
-  b: 2,
-}
-
-console.log(push(arr,4),arr)
-console.log(push(arr,5),arr)
+window.onresize = throttle(function () {
+  console.log('-------')
+},1000)

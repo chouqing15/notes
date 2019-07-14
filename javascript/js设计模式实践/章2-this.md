@@ -206,4 +206,10 @@ Function.prototype.uncurrying = function (){
     return _this.apply(obj,arguments);
   }
 }
+
+var push = Array.prototype.push.uncurrying();
+
+for(var i = 0, fn, ary = ['push','shift','forEach'];fn = ary[i++];){
+  Array[fn] = Array.prototype[fn].uncurrying();
+}
 ```
