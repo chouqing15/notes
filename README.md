@@ -1,4 +1,4 @@
-# little-fool-s-code-base
+# notes
 
 
 ## ssh 
