@@ -15,5 +15,10 @@
 - [js继承](./js_proto.js)
 - [git](./gitOrder/gitNotes.md)
 
+## 连接大全
+ - 书籍类
+    - stackoverflow 上的程序员应该阅读的非编程类书籍有哪些？[中文版](https://justjavac.com/other/2012/05/15/qualified-programmer-should-read-what-books.html)
+    - [程序员的自我修养](https://www.kancloud.cn/kancloud/a-programmer-prepares/78164)
+    - github 上的一个流行的编程书籍索引[中文版](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)
 ## 吐槽大会
 - [前端领域没意思](./teasingCode/我看到的程序员现状.md)
