@@ -1,9 +1,6 @@
 # notes
 > 记录美好生活之佛系程序员.
 
-## 吐槽
-- [不满](./teasingCode/我看到的程序员现状.md)
-
 ## ssh 
  * 生成ssh `ssh-keygen` 带有文件名`.pub` 是公钥， 另一个是私钥 ，私钥是要秘密保存的
 
@@ -16,3 +13,6 @@
 - [http](./javscript/http.md)
 - [rem配置](./basicFile/rem.js)
 - [js继承](./js_proto.js)
+
+## 吐槽大会
+- [我看到的程序员现状](./teasingCode/我看到的程序员现状.md)
