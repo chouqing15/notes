@@ -15,4 +15,4 @@
 - [js继承](./js_proto.js)
 
 ## 吐槽大会
-- [我看到的程序员现状](./teasingCode/我看到的程序员现状.md)
+- [前端领域没意思](./teasingCode/我看到的程序员现状.md)
