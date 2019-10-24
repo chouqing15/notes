@@ -1,9 +1,6 @@
 # notes
 > 记录美好生活之佛系程序员. 学一个记录一个,想起了记录一下
 
-## ssh 
- * 生成ssh `ssh-keygen` 带有文件名`.pub` 是公钥， 另一个是私钥 ，私钥是要秘密保存的
-
 ## 笔记
 - [markdowm](./markdown.md)
 - [代码整洁之道](./javascript/neatCode.md)
@@ -12,7 +9,7 @@
 - [查看全局npm安装包命令](./javascript/npm_global.md)
 - [http](./javscript/http.md)
 - [rem配置](./basicFile/rem.js)
-- [js继承](./js_proto.js)
+<!-- - [js继承](./js_proto.js) -->
 - [git](./gitOrder/gitNotes.md)
 
 ## 连接大全
