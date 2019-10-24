@@ -13,6 +13,7 @@
 - [http](./javscript/http.md)
 - [rem配置](./basicFile/rem.js)
 - [js继承](./js_proto.js)
+- [git](./gitOrder/gitNotes.md)
 
 ## 吐槽大会
 - [前端领域没意思](./teasingCode/我看到的程序员现状.md)
