@@ -19,5 +19,6 @@
     - [程序员的自我修养](https://www.kancloud.cn/kancloud/a-programmer-prepares/78164)
     - github 上的一个流行的编程书籍索引[中文版](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)
     - 来自大佬的推荐[justjavac](https://weibo.com/justjavac?is_hot=1) 免费的计算机编程类[中文书籍](https://github.com/justjavac/free-programming-books-zh_CN)
+    - [前端面试汇总](https://www.yuque.com/achoupenti/kb/peen4e/edit)
 ## 吐槽大会
 - [前端领域没意思](./teasingCode/我看到的程序员现状.md)
